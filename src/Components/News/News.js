@@ -6,14 +6,26 @@ class News extends Component {
         this.state = {
             newsList: []
         }
+        this.convertDate = this.convertDate.bind(this);
+    }
+    convertDate(val) {
+        // var date = new Date();
+        // var date2 = new Date(val.replace("Z", " "))
+        // // console.log(date.toISOString().replace("T", " ").replace("Z", " "));
+        // // var timeDiff = Math.abs(date.getTime() - date2.getTime())
+        // // var diffDays = Math.ceil(timeDiff / (1000 * 3600));
+        // console.log(Math.abs(date - date2))
+        return val.replace("T", " ").replace("Z", " ");
+
     }
     render() {
+
         const News = this.props.newsData.map((data, index) =>
             <div key={index} className="news-container">
                 <img src={data.urlToImage} style={{ width: '100%' }} alt="img" />
                 <div className="news-list-head">
                     <p>{data.source.name}</p>
-                    <p>{data.publishedAt}</p>
+                    <p>{this.convertDate(data.publishedAt)}</p>
                 </div>
                 <div className="news-list">
 
