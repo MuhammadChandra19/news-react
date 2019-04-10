@@ -41,6 +41,12 @@ class Home extends Component {
             })
             .catch(err => {
                 console.log(err);
+                this.setState({
+
+                    loading: "none",
+                    buttonLoading: "none"
+
+                })
             })
 
     }
@@ -67,7 +73,12 @@ class Home extends Component {
 
                 })
                 .catch(err => {
-                    console.log(err);
+                    this.setState({
+
+                        loading: "none",
+                        buttonLoading: "none"
+
+                    })
                 })
         })
         console.log(val)
@@ -112,6 +123,12 @@ class Home extends Component {
             })
             .catch(err => {
                 console.log(err);
+                this.setState({
+
+                    loading: "none",
+                    buttonLoading: "none"
+
+                })
             })
     }
     render() {
